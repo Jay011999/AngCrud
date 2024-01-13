@@ -6,12 +6,18 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-8">
     <div class="row">
       <app-single-category
         *ngFor="let category of categories"
         [category]="category" class="col-md-4"
+        (categorySelected)="onCategorySelected($event)"
+        (editCategory)="onEditCategory($event)"
       ></app-single-category>
     </div>
+  </div>
+  <div class="col-md-4">
+    <app-view-component *ngIf="selectedCategory" [category]="selectedCategory"></app-view-component>
+    <app-edit-category *ngIf="editCategoryDetails" [category]="editCategoryDetails" (categoryUpdated)="onUpdatedCategory($event)"></app-edit-category>
   </div>
 </div>

@@ -8,6 +8,7 @@ import { SingleCategoryComponent } from './single-category/single-category.compo
 import { AddCategoryComponent } from './add-category/add-category.component';
 import { FormsModule } from '@angular/forms';
 import { ViewComponentComponent } from './view-component/view-component.component';
+import { EditCategoryComponent } from './edit-category/edit-category.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ViewComponentComponent } from './view-component/view-component.componen
     CategoriesComponent,
     SingleCategoryComponent,
     AddCategoryComponent,
-    ViewComponentComponent
+    ViewComponentComponent,
+    EditCategoryComponent
   ],
   imports: [
     BrowserModule,

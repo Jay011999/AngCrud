@@ -12,7 +12,7 @@ export class AddCategoryComponent {
 
   @Output() categoryAdded = new EventEmitter<ICategory>();
 
-  onAddCategoty() {
+  onAddCategory() {
     let category: ICategory = {
       title: this.title,
       description: this.description,

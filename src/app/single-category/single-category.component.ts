@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ICategory } from '../Models/ICategory';
 
 @Component({
@@ -8,8 +8,16 @@ import { ICategory } from '../Models/ICategory';
 })
 export class SingleCategoryComponent {
   @Input() category: ICategory | null = null;
+  @Output() categorySelected = new EventEmitter<ICategory>();
+  @Output() editCategory = new EventEmitter<ICategory>();
 
-  onCategorySelect(){
-    
+  onCategorySelect() {
+    this.category &&
+    this.categorySelected.emit(this.category);
+  }
+
+  onEditCategory() {
+    this.category &&
+    this.editCategory.emit(this.category);
   }
 }
